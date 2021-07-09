@@ -1,0 +1,147 @@
+.searching {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding-top: 10px;
+  position: absolute;
+  pointer-events: none;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: linear 200ms;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &.is-search {
+    opacity: 1;
+    pointer-events: inherit;
+  }
+}
+
+.actions {
+  opacity: 0;
+  width: 45.5%;
+  display: flex;
+  margin: 0 auto 9px;
+  align-items: center;
+  transform: translateX(50px);
+  transition: 500ms ease-in-out;
+  justify-content: space-between;
+
+  &__input {
+    border: 0;
+    width: 100%;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #656565;
+
+    &:last-child {
+      opacity: 0;
+      transition: 300ms;
+    }
+  }
+
+  &.is-search {
+    opacity: 1;
+    transition-delay: 300ms;
+    transform: translateX(0);
+
+    svg:last-child {
+      opacity: 1;
+      transition-delay: 700ms;
+    }
+  }
+}
+
+.results {
+  width: 45.2%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 24px 8px 18px;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+  transition: 500ms ease-in-out;
+  justify-content: space-between;
+
+  &__title {
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0 0 8px 30px;
+    text-transform: uppercase;
+    transform: translateX(100px);
+    transition: 400ms ease-in-out;
+  }
+
+  &__item {
+    opacity: 0;
+    width: 100%;
+    margin: 3px 0;
+    line-height: 100%;
+    transform: translateX(100px);
+    transition: 400ms ease-in-out;
+  }
+
+  &__link {
+    width: 100%;
+    color: #333;
+    display: flex;
+    font-size: 14px;
+    padding: 6px 0 6px 48px;
+
+    &:hover {
+      color: #0066cc;
+      background-color: #f5f5f5;
+    }
+  }
+
+  &:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 175ms;
+  }
+
+  &:nth-child(4) {
+    transition-delay: 150ms;
+  }
+
+  &:nth-child(5) {
+    transition-delay: 125ms;
+  }
+
+  &:nth-child(6) {
+    transition-delay: 100ms;
+  }
+
+  &.is-search {
+    h1,
+    li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
